@@ -1,7 +1,7 @@
 # vanillaJS
 
 
-MovieDB API
+*******  MovieDB API  ********
 
 Aim: develop JS app with features: 
 1. Serach movies
