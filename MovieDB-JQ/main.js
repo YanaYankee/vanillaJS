@@ -66,16 +66,7 @@ $(window).on('load', function (e) {
             getInfo("movie/top_rated", storage.current_page, renderList, error);     // Mivie List call
         
 });
-    // $(window).scroll(function() {
-    // if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-       // storage.current_page++
-
-            // if (storage.current_page < storage.limit) {
-                // renderList;
-            // }
-      
-    // }
-// });
+ 
 // ------------------------------------------ AJAX CALL FUNCTION -----------------------------------------------------------------
  function getInfo(apiName, config, render, error) {
         $.ajax({
