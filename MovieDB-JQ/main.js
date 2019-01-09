@@ -1,12 +1,9 @@
 //--------------------------------------------- Storage Object -----------------------------
 var storage = {
-<<<<<<< HEAD
     url: "https://api.themoviedb.org/3/",
     imgUrl: "https://image.tmdb.org/t/p/w500/",
-=======
     url: "https://api.themoviedb.org/3/",
     imgUrl: "https://image.tmdb.org/t/p/w500/", 
->>>>>>> b7e8a016562e2b2d1d25855e67d66b5e81798c94
     key: '?api_key=1078453dc71a614c3a03d74c27fbdcb1&language=en-US',
     articleList: [],
     total_pages: '',
@@ -21,7 +18,7 @@ var storage = {
 };
 
 //-----------------------------------------  Movies List page (GRID)
-<<<<<<< HEAD
+
 $(window).on('load', function (e) {
     $('#movieBackground').hide();
     getInfo("movie/top_rated", storage.current_page, renderList, error);     // Mivie List call
@@ -43,11 +40,11 @@ $(window).scroll(function() {
     }
 });
 // ------------------------------------------ AJAX CALL FUNCTION -----------------------------------------------------------------
-function getInfo(apiName, config, render, error) {
+function getInfo(apiName, config, success, error) {
     $.ajax({
         url: storage.url + apiName + storage.key  +config,
         dataType: "json",
-        success: render,
+        success: success,
         error: error
     });
 }
@@ -63,7 +60,7 @@ function renderList (result, status, xhr) {
     articleList();
 
 
-=======
+
 $(window).on('load', function (e) {  
         $('#movieBackground').hide();         
             getInfo("movie/top_rated", storage.current_page, renderList, error);     // Mivie List call
@@ -100,7 +97,7 @@ function renderList (result, status, xhr) {
     articleList();
     
     
->>>>>>> b7e8a016562e2b2d1d25855e67d66b5e81798c94
+
     $(document).ajaxStart(function () {
         $(".imageDiv img").show();
     });
@@ -108,7 +105,7 @@ function renderList (result, status, xhr) {
     $(document).ajaxStop(function () {
         $(".imageDiv img").hide();
     });
-<<<<<<< HEAD
+
 
     $("input").on('change keyup paste', function (e) {
 
@@ -148,7 +145,7 @@ function renderList (result, status, xhr) {
                 + "</div>"
             )
         }
-=======
+
     
     $("input").on('change keyup paste', function (e) {          
 
@@ -156,7 +153,7 @@ function renderList (result, status, xhr) {
              getInfo("search/movie", "&page=1&include_adult=false&query=" + input.value, renderSearch, error);                  //  call search render
 
 });
->>>>>>> b7e8a016562e2b2d1d25855e67d66b5e81798c94
+
 
         resultHtml.append("</div>");
         $("#listM").html(resultHtml);}
@@ -168,8 +165,7 @@ function ArticalItem(){
 
 // ------------------------------------------ RENDER SEARCH LIST FUNCTION -----------------------------------------------------------------
 
-<<<<<<< HEAD
-=======
+
 
 
 function articleList(){
@@ -210,16 +206,14 @@ function ArticalItem(){
 
 // ------------------------------------------ RENDER SEARCH LIST FUNCTION -----------------------------------------------------------------     
 
->>>>>>> b7e8a016562e2b2d1d25855e67d66b5e81798c94
+
 function renderSearch(result, status, xhr) {
     storage.movieList = result["results"];
     console.log(storage);
     var searchResult = $("<div class=\"MovieList\">");
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> b7e8a016562e2b2d1d25855e67d66b5e81798c94
+
+
     for (var i = 0; i < result["results"].length; i++) {
         searchResult.append("<div class=\"col-12 col-sm-12 col-md-8 input-group \" resourceId=\"" + storage.movieList[i]["id"] + "\">" + "<h4 class=\"card-title\">" + result["results"][i]["title"] + "</h4></div>")
     }
@@ -227,15 +221,15 @@ function renderSearch(result, status, xhr) {
     $("#searchList").html(searchResult);
 }
 
-<<<<<<< HEAD
+
 // ------------------------------------------ STATUS ERROR FUNCTION -----------------------------------------------------------------
 function error(xhr, status, error) {
     $("#listM").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
 }
-=======
+
 // ------------------------------------------ STATUS ERROR FUNCTION -----------------------------------------------------------------   
 function error(xhr, status, error) {
                 $("#listM").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
     }
         
->>>>>>> b7e8a016562e2b2d1d25855e67d66b5e81798c94
+
